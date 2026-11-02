@@ -1,0 +1,15 @@
+.vscode/
+.idea/
+
+# 编译产物
+*.exe
+*.o
+*.obj
+*.out
+*.log
+*.tmp
+*.bak
+
+# 系统文件
+.DS_Store
+Thumbs.db
