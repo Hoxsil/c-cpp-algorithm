@@ -9,7 +9,7 @@ bool is_odd(long long num){
             break;
         }
     }
-    return is_odd;
+    return is_odd; 
 }
 
 int main(){

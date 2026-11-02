@@ -1,16 +1,20 @@
 #include <stdio.h>
 
-int main(){
-    for(int num=100;num <= 10000;num++){
-        int sum = 0;
-        for(int i=1; i*i <= num; i++){
-            if(num % i == 0){
-                if(i == num/i) sum += i;
-                else sum += i + num/i;
-            }
+int get_factor_sum(int num){
+    int sum = 0;
+    for(int i=1; i*i <= num; i++){
+        if(num % i == 0){
+            if(i == num/i) sum += i;
+            else sum += i + num/i;
         }
-        sum -= num;
-        if(sum == num) printf("%d\n", num);
+    }
+    return sum-num;
+}
+
+int main(){
+    for(int num=2;num <= 20000;num++){
+        int num_factor_sum = get_factor_sum(num);
+        if(num == get_factor_sum(num_factor_sum)) printf("%d %d\n", num, num_factor_sum);
     }
     return 0;
 }

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-bool is_odd[10000001];
+bool is_odd_list[10000001];
 
 int get_length(int num){
     int count=0;
@@ -35,15 +35,15 @@ bool is_palindromic_number(int num){
 
 int main(){
     for(int i=2;i <= 9999999;i++)
-        is_odd[i] = true;
+        is_odd_list[i] = true;
 
     for(int i=2;i*i <= 9999999;i++){
-        if(!is_odd[i]) continue;
+        if(!is_odd_list[i]) continue;
         for(int j=2*i;j <= 9999999;j+=i)
-            is_odd[j] = false;
+            is_odd_list[j] = false;
     }
     for(int i=1000000;i <= 9999999;i++){
-        if(is_odd[i] && is_palindromic_number(i)) printf("%d\n", i);
+        if(is_odd_list[i] && is_palindromic_number(i)) printf("%d\n", i);
     }
     return 0;
 }
